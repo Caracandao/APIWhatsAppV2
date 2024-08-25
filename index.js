@@ -37,14 +37,26 @@ const startSock = () => {
 
     sock.ev.on('creds.update', saveState);
 
+    sock.ev.on('qr', (qr) => {
+        // Guardamos el QR en la variable sock para poder acceder a él más tarde
+        sock.qr = qr;
+        console.log('QR received', qr);
+    });
+
     return sock;
 };
 
 let sock = startSock();
 
 app.get('/qr', (req, res) => {
-    qrcode.generate('Scan the QR code with your phone', { small: true });
-    res.send('Scan the QR code with your phone');
+    if (sock?.qr) {
+        res.type('svg');
+        qrcode.generate(sock.qr, { small: true }, function (qr) {
+            res.send(qr);
+        });
+    } else {
+        res.status(404).send('QR code not available');
+    }
 });
 
 app.post('/send-message', async (req, res) => {
