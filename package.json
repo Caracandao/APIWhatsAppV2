@@ -1,22 +1,18 @@
 {
-    "name": "apiwhatsappv2",
+    "name": "APIWhatsAppV2",
     "version": "1.0.0",
-    "description": "API de WhatsApp usando whatsapp-web.js",
-    "main": "src/app.js",
+    "description": "API de WhatsApp usando Baileys",
+    "main": "index.js",
     "scripts": {
-      "start": "node src/app.js",
-      "dev": "nodemon src/app.js"
+      "start": "node index.js"
     },
-    "keywords": ["whatsapp", "api", "whatsapp-web.js"],
+    "keywords": ["whatsapp", "api", "baileys"],
     "author": "Manuel García López",
     "license": "ISC",
     "dependencies": {
       "express": "^4.17.1",
-      "qrcode-terminal": "^0.12.0",
-      "whatsapp-web.js": "^1.19.4",
-      "qr-image": "^3.2.0"
-    },
-    "devDependencies": {
-      "nodemon": "^2.0.15"
+      "baileys": "^4.0.0",
+      "qrcode-terminal": "^0.12.0"
     }
   }
+  
