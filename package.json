@@ -4,14 +4,18 @@
   "description": "API de WhatsApp usando Baileys",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": ["whatsapp", "api", "baileys"],
   "author": "Manuel García López",
   "license": "ISC",
   "dependencies": {
+    "@adiwajshing/baileys": "^3.5.3",
     "express": "^4.17.1",
-    "baileys": "^4.0.0",
     "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
